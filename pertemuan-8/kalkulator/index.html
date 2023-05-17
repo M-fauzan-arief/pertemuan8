@@ -1,0 +1,55 @@
+    <!DOCTYPE html>
+    <htmls>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Web Page</title>
+        </head>
+        <body>
+            <h1>Kalkulator sederhana berbasis javascript</h1>
+            <form>
+                <label for="n1">nomor 1</label>
+                <input type="number" id="n1"><br><br>
+
+                <label for="n2">nomor 2</label>
+                <input type="number" id="n2"><br><br>
+
+                <p>operator</p>
+                <select id="opsi" title="opsi">
+                    <option value="tambah">tambah</option>
+                    <option value="kurang">kurang</option>
+                    <option value="kali">kali</option>
+                    <option value="bagi">bagi</option>
+                </select>
+
+                <input type="button" value="OK" onclick="myFunction()">
+            </form>
+
+            <p>Hasilnya adalah :</p>
+            <span id="hasil"></span>
+                <script>
+
+                    function myFunction() {
+                        var a = parseInt(document.getElementById("n1").value);
+                        var b = parseInt(document.getElementById("n2").value);
+                        var pil = document.getElementById("opsi").value;
+                        var hasil;
+
+
+                        if (pil === "tambah") {
+                            hasil = a + b;
+                        } else if (pil === "kali") {
+                            hasil = a * b;
+                        } else if (pil === "kurang") {
+                            hasil = a - b;
+                        } else if (pil === "bagi") {
+                            hasil = a / b;
+                        }
+
+                        document.getElementById("hasil").innerHTML =hasil;
+                        console.log(hasil);
+                    }
+
+                </script>
+        </body>
+        </html>
+
